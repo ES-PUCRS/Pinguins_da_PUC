@@ -1,6 +1,10 @@
-# gcs_t1_20201 (o repositório deve ser renomeado para um nome à escolha do grupo)
-Repositório Inicial do Tabalho 1 GCS 2020/1
+# Pinguins da PUC
+Repositório do Tabalho 1 GCS 2020/1
 
-Componentes do time:
-- Nome1
-- Nome2
+## Componentes do time:
+- Alessandro Souza
+- Cleyson Oliveira
+- Gustavo Oliveira
+- Lucas Cardoso
+- Vinícius Bazanella
+- Willian Albeche
