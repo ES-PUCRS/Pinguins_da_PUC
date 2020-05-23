@@ -50,12 +50,12 @@ hr {
     align-items: center;
 }
 
-.frame {
+/* .frame {
     height: 100%;
     width: 100%;
-    border: 2px solid black;
     position: relative;
-}
+    background-color: transparent;
+} */
 
 .sidenav {
     display: flex;
@@ -129,26 +129,12 @@ Input classes
     align-items: center;
     justify-content: center;
     
-     position: absolute; 
+    position: absolute; 
     top: 5%;
     width: 75%;
-    left: 65%;
-    transform: translateX(-50%);
-}
-
-/* .fields{
-    width: 15%;
-    margin-right: 8%;
-}
-
-.text-field{
-    position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 80%;
-    height: 100%;
-    margin-top: 5%;
-} */
+}
 
 .descr-text{
     position: absolute;
@@ -169,4 +155,25 @@ Input classes
     display: flex;
     justify-content: space-around;
 
+}
+
+.stretch {
+    align-items: stretch;
+    width: 100%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    min-width: 240px;
+}
+
+.start {
+    justify-content: start;
+}
+
+.form-field {
+    
 }
