@@ -24,4 +24,56 @@ body {
     width: 25%;
     height: 100%;
     border: 2px solid black;
+    position: relative;
+}
+
+/*Navigation buttons common class.*/
+.nav-buttons{
+    position: absolute;
+    display: inline-block;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+    width: 100%;
+    height: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+/*
+Button ids. (It will be used in the JS anyway)
+Each top number is the previous number plus 8.
+For instance: 
+#conta: top: (5+8) = 13% 
+*/
+#operador{
+    top: 5%;
+}
+
+#conta{
+    top: 13%;
+}
+
+#allMov{
+    top: 21%;
+}
+
+#perMov{
+    top: 29%;
+}
+
+#opMov{
+    top: 37%;
+}
+
+#typeMov{
+    top: 45%;
+}
+
+#transferencia{
+    top: 53%;
+}
+
+#relGeren{
+    top: 61%;
 }
