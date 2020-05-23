@@ -51,8 +51,10 @@ hr {
 }
 
 .frame {
-    height: 100%;
-    width: 100%;
+    height: 80%;
+    width: 70%;
+    border: 2px solid black;
+    position: relative;
 }
 
 .sidenav {
@@ -117,4 +119,34 @@ For instance:
 
 #relGeren{
     top: 61%;
+}
+
+/*
+Input classes
+*/
+.form-div{
+    position: absolute;
+    top: 5%;
+    width: 75%;
+    left: 65%;
+    transform: translateX(-50%);
+}
+
+.fields{
+    width: 15%;
+    margin-right: 8%;
+}
+
+.text-field{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 100%;
+    margin-top: 5%;
+}
+
+.descr-text{
+    position: absolute;
+    margin-top: 5.5%; /*plus .5 to centralize with the input*/
 }
