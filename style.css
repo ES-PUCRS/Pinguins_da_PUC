@@ -125,14 +125,18 @@ For instance:
 Input classes
 */
 .form-div{
-    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+     position: absolute; 
     top: 5%;
     width: 75%;
     left: 65%;
     transform: translateX(-50%);
 }
 
-.fields{
+/* .fields{
     width: 15%;
     margin-right: 8%;
 }
@@ -144,9 +148,25 @@ Input classes
     width: 80%;
     height: 100%;
     margin-top: 5%;
-}
+} */
 
 .descr-text{
     position: absolute;
     margin-top: 5.5%; /*plus .5 to centralize with the input*/
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+.space-around{
+    display: flex;
+    justify-content: space-around;
+
 }
