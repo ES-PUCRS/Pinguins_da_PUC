@@ -5,16 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./index.js"></script>
     <link rel="stylesheet" href="./style.css">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css%22%3E">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js%22%3E"></script> -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap" rel="stylesheet">
     <title> T1 - GCS </title>
 </head>
 <body>
-    <div class="container">
-        <div class="frame">
-            <div class="sidenav">
-
+    <div class="container row start">
+        <div class="sidenav">            
+            <div class="profile-pannel">
+                <img src="./img/user.svg" class="user-img">
             </div>
+
+            <div class="subtitle"> Opções </div>
+            <button class="button" id="operador">Operador</button>
+            <button class="button" id="conta">Conta</button>
+            <hr>
+
+            <div class="subtitle"> Movimentações </div>
+            <button class="button" id="allMov">Todos Movimentos</button>
+            <button class="button" id="perMov">Movimentos por Período</button>
+            <button class="button" id="opMov">Movimentos por Operador</button>
+            <button class="button" id="typeMov">Movimentos por Tipo</button>
+            <hr>
+            
+            <div class="subtitle"> Outras Opções </div>
+            <button class="button" id="transferencia">Transferências</button>
+            <button class="button" id="relGeren">Relatório Gerencial</button>
+        </div>
+        <div class="content">
+            <form>
+                <div class="row space-around">
+                    <div class="column">
+                        <div class="row">
+                            <div class="column form-field">
+                                <div>Data</div>
+                                <input type="text" name="data" id="dataId"/>       
+                            </div>
+                            
+                            <div class="column form-field">
+                                <div>Valor</div>
+                                <input type="text" name="data" id="dataId"/>       
+                            </div>
+        
+                            <div class="column form-field">
+                                <div>Tipo</div>
+                                <input type="text" name="data" id="dataId"/>       
+                            </div>
+                        </div>
+                        <div class="row stretch">
+                            <div class="column stretch">
+                                <div>Descrição</div>
+                                <input type="text" name="data" id="dataId"/>       
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </body>

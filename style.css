@@ -2,6 +2,43 @@ body {
     width: 100vw;
     height: 100vh;
     margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+hr {
+    border: 0;
+    clear:both;
+    display:block;
+    width: 96%;               
+    background-color:#bbb;
+    height: 1px;
+}
+
+
+.profile-pannel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+    background-image: url('./img/background-img.jpg');
+    background-size: cover;
+}
+
+.user-img {
+    width: 100px;
+}
+
+.subtitle {
+    font-weight: bold;
+    color: #555;
+    font-size: 12px;
+    margin: 12px 0 12px 0;
+    padding: 0 12px 0 12px;
+}
+
+.pad {
+    padding: 0 12px 0 12px;
 }
 
 .container {
@@ -13,15 +50,130 @@ body {
     align-items: center;
 }
 
-.frame {
-    height: 80%;
-    width: 70%;
-    border: 2px solid black;
-}
+/* .frame {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background-color: transparent;
+} */
 
 .sidenav {
     display: flex;
-    width: 25%;
+    flex-direction: column;
     height: 100%;
-    border: 2px solid black;
+    width: 15%;
+    min-width: 240px;
+    box-shadow: 0 0 8px;
+}
+
+
+/*Navigation buttons common class.*/
+.button{
+    font-size: 16px;
+    height: 5%;
+    cursor: pointer;
+    border: none;
+    background-color: white;
+    text-align: left;
+    padding: 0 12px 0 12px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.button:hover { 
+    background-color: #eee;
+}
+
+/*
+Button ids. (It will be used in the JS anyway)
+Each top number is the previous number plus 8.
+For instance: 
+#conta: top: (5+8) = 13% 
+*/
+#operador{
+    top: 5%;
+}
+
+#conta{
+    top: 13%;
+}
+
+#allMov{
+    top: 21%;
+}
+
+#perMov{
+    top: 29%;
+}
+
+#opMov{
+    top: 37%;
+}
+
+#typeMov{
+    top: 45%;
+}
+
+#transferencia{
+    top: 53%;
+}
+
+#relGeren{
+    top: 61%;
+}
+
+/*
+Input classes
+*/
+.form-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    position: absolute; 
+    top: 5%;
+    width: 75%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.descr-text{
+    position: absolute;
+    margin-top: 5.5%; /*plus .5 to centralize with the input*/
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+.space-around{
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.stretch {
+    align-items: stretch;
+    width: 100%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    min-width: 240px;
+}
+
+.start {
+    justify-content: start;
+}
+
+.form-field {
+    
 }
