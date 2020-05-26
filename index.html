@@ -32,34 +32,38 @@
             <button class="button" id="relGeren">Relatório Gerencial</button>
         </div>
         <div class="content">
-            <form>
-                <div class="row space-around">
-                    <div class="column">
-                        <div class="row">
+            <div id="form" style="width: 100%; margin-top: 24px;">
+                <form>
+                    <div class="column" style="width: 80%; margin: 0 auto;">
+                        <div class="row" style="justify-content: space-between; margin-bottom: 12px;">
                             <div class="column form-field">
                                 <div>Data</div>
-                                <input type="text" name="data" id="dataId"/>       
+                                <input type="text" name="data"/>       
                             </div>
-                            
-                            <div class="column form-field">
-                                <div>Valor</div>
-                                <input type="text" name="data" id="dataId"/>       
-                            </div>
-        
+
                             <div class="column form-field">
                                 <div>Tipo</div>
-                                <input type="text" name="data" id="dataId"/>       
+                                <input type="text" name="tipo"/>       
+                            </div>
+
+                            <div class="column form-field">
+                                <div>Valor</div>
+                                <input type="text" name="valor"/>       
                             </div>
                         </div>
-                        <div class="row stretch">
+                        <div class="row">
                             <div class="column stretch">
                                 <div>Descrição</div>
                                 <input type="text" name="data" id="dataId"/>       
                             </div>
                         </div>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
+            <hr style="margin-top: 24px;">
+            <div id="views" style="height: 100%; width: 100%;">
+                
+            </div>
         </div>
     </div>
 </body>
