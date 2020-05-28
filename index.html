@@ -18,7 +18,7 @@
             </div>
 
             <div class="subtitle"> Opções </div>
-            <button class="button" id="operador">Operador</button>
+            <button class="button" id="operador"onclick="navega('operador')"> Criar Operador</button>
             <button class="button" id="conta">Conta</button>
             <hr>
 
@@ -37,6 +37,13 @@
             <div id="form" style="width: 100%; margin-top: 24px;">
                 <form>
                     <div class="column" style="width: 80%; margin: 0 auto;">
+                        <div class="row">
+                            <div class="column">
+                                <div>Operador Ativo</div>
+                                <select id="select-operador" onchange="operadorAtivo()">
+                                </select>                            
+                            </div>
+                        </div>
                         <div class="row" style="justify-content: space-between; margin-bottom: 12px;">
                             <div class="column form-field">
                                 <div>Data</div>
