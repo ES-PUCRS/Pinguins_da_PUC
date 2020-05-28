@@ -5,9 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./index.js"></script>
     <link rel="stylesheet" href="./style.css">
+    <link rel="import" href="./telas/teste.html">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap" rel="stylesheet">
     <title> T1 - GCS </title>
 </head>
 <body>
-    
+    <div class="container row start">
+        <div class="sidenav">
+            <div class="profile-pannel">
+                <img src="./img/user.svg" class="user-img">
+            </div>
+
+            <div class="subtitle"> Opções </div>
+            <button class="button" id="operador">Operador</button>
+            <button class="button" id="conta">Conta</button>
+            <hr>
+
+            <div class="subtitle"> Movimentações </div>
+            <button class="button" id="allMov" onclick="navega('teste')">Todos Movimentos</button>
+            <button class="button" id="perMov" onclick="navega('teste2')">Movimentos por Período</button>
+            <button class="button" id="opMov">Movimentos por Operador</button>
+            <button class="button" id="typeMov">Movimentos por Tipo</button>
+            <hr>
+            
+            <div class="subtitle"> Outras Opções </div>
+            <button class="button" id="transferencia">Transferências</button>
+            <button class="button" id="relGeren">Relatório Gerencial</button>
+        </div>
+        <div class="content">
+            <div id="form" style="width: 100%; margin-top: 24px;">
+                <form>
+                    <div class="column" style="width: 80%; margin: 0 auto;">
+                        <div class="row" style="justify-content: space-between; margin-bottom: 12px;">
+                            <div class="column form-field">
+                                <div>Data</div>
+                                <input type="text" name="data"/>       
+                            </div>
+
+                            <div class="column form-field">
+                                <div>Tipo</div>
+                                <input type="text" name="tipo"/>       
+                            </div>
+
+                            <div class="column form-field">
+                                <div>Valor</div>
+                                <input type="text" name="valor"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="column stretch">
+                                <div>Descrição</div>
+                                <textarea type="text" name="descricao" id="dataId" style="min-width: 100%; max-width: 100%;"></textarea>       
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <hr style="margin-top: 24px;">
+            
+            <div id="rota" style="height: 100%; width: 100%;"></div>
+        </div>
+    </div>
 </body>
 </html>
