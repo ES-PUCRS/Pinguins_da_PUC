@@ -18,6 +18,37 @@ function cadastraOperador() {
     alert('Operador cadastrado!')
 }
 
+function cadastraMovimento() {
+    const data = document.getElementById("data").value
+    const tipo = document.getElementById("tipo").value
+    const valor = document.getElementById("valor").value
+    const descricao = document.getElementById("descricao").value
+    const operador = document.getElementById("select-operador").innerHTML
+
+    var tabela = document.getElementById('todos-movimentos');
+    var numeroLinhas = tabela.rows.length;
+    var linha = tabela.insertRow(numeroLinhas);
+    var celula1 = linha.insertCell(0);
+    var celula2 = linha.insertCell(1);   
+    var celula3 = linha.insertCell(2); 
+    var celula4 = linha.insertCell(3); 
+    var celula5 = linha.insertCell(4); 
+    celula1.innerHTML = data; 
+    celula2.innerHTML =  operador;
+    celula3.innerHTML =  tipo;
+    celula4.innerHTML =  descricao;
+    celula5.innerHTML =  'R$ ' + valor;
+
+    //adding some style via js
+
+    linha.style="border: 1px solid black";
+    celula1.style="border: 1px solid black";
+    celula2.style="border: 1px solid black";
+    celula3.style="border: 1px solid black";
+    celula4.style="border: 1px solid black";
+    celula5.style="border: 1px solid black";
+}
+
 function operadorAtivo() {
     const select = document.getElementById("select-operador")
 

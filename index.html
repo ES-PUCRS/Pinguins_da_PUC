@@ -23,7 +23,7 @@
             <hr>
 
             <div class="subtitle"> Movimentações </div>
-            <button class="button" id="allMov" onclick="navega('teste')">Todos Movimentos</button>
+            <button class="button" id="allMov" onclick="navega('todos-movimentos')">Todos Movimentos</button>
             <button class="button" id="perMov" onclick="navega('teste2')">Movimentos por Período</button>
             <button class="button" id="opMov">Movimentos por Operador</button>
             <button class="button" id="typeMov">Movimentos por Tipo</button>
@@ -35,7 +35,6 @@
         </div>
         <div class="content">
             <div id="form" style="width: 100%; margin-top: 24px;">
-                <form>
                     <div class="column" style="width: 80%; margin: 0 auto;">
                         <div class="row">
                             <div class="column">
@@ -47,27 +46,28 @@
                         <div class="row" style="justify-content: space-between; margin-bottom: 12px;">
                             <div class="column form-field">
                                 <div>Data</div>
-                                <input type="text" name="data"/>       
+                                <input type="text" name="data" id="data"/>       
                             </div>
 
                             <div class="column form-field">
                                 <div>Tipo</div>
-                                <input type="text" name="tipo"/>       
+                                <input type="text" name="tipo" id="tipo"/>       
                             </div>
 
                             <div class="column form-field">
                                 <div>Valor</div>
-                                <input type="text" name="valor"/>
+                                <input type="text" name="valor" id="valor"/>
                             </div>
                         </div>
                         <div class="row">
                             <div class="column stretch">
                                 <div>Descrição</div>
-                                <textarea type="text" name="descricao" id="dataId" style="min-width: 100%; max-width: 100%;"></textarea>       
+                                <textarea type="text" name="descricao" id="descricao" style="min-width: 100%; max-width: 100%;"></textarea>       
                             </div>
                         </div>
+                    <button class="button" id="operador"onclick="cadastraMovimento()"> Enviar</button>
                     </div>
-                </form>
+                
             </div>
             <hr style="margin-top: 24px;">
             
