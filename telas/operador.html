@@ -4,13 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/style.css" />
-    <link rel="stylesheet" href="operador.css" />
 </head>
     
     <div class="column">
         <div>Nome</div>
-        <input type="text" name="nome">
+        <input id="operador-nome" type="text" name="nome">
+
         <div>CPF</div>
-        <input type="text" name="cpf">
-        <button class="button" id="conta">Cadastrar</button>
+        <input id="operador-cpf" type="text" name="cpf">
+        
+        <div>
+            <button class="button" onclick="cadastraOperador()">Cadastrar</button>
+        </div>
     </div>  
