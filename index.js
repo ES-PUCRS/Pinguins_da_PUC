@@ -74,13 +74,3 @@ function operadorAtivo() {
         value: obj.value
     })
 }
-
-function mostrarMovimento(){
-
-    if(document.getElementById('form').style.display == 'none'){
-        document.getElementById('form').style.display = 'block';
-    }else if(document.getElementById('form').style.display == 'block'){
-        document.getElementById('form').style.display = 'none';
-    }
-
-}
