@@ -3,6 +3,7 @@ body {
     height: 100vh;
     margin: 0;
     font-family: 'Roboto', sans-serif;
+    overflow: hidden;
 }
 
 hr {
@@ -14,7 +15,6 @@ hr {
     background-color: #bbb;
     height: 1px;
 }
-
 
 * {
     outline: none;
@@ -36,7 +36,6 @@ th {
 tr:hover {
     background-color: rgb(228, 228, 228);
 }
-
 
 tr:nth-child(even) {
     background-color: #f2f2f2;
@@ -193,7 +192,6 @@ Input classes
     margin-bottom: 12px
 }
 
-
 .column {
     display: flexbox;
     flex-direction: column;
@@ -203,7 +201,7 @@ Input classes
 }
 
 .columnMargin {
-    width: 80%; 
+    width: 80%;
     margin: 0 auto
 }
 
@@ -233,19 +231,19 @@ Input classes
     justify-content: start;
 }
 
-#form{
+#form {
     width: 100%;
     margin-top: 24px;
 }
 
-#dataId{
+#dataId {
     min-width: 100%;
     max-width: 100%;
 }
 
-#rota{
+#rota {
     height: 100%;
-  width: 100%;
+    width: 100%;
 }
 
 .relatoriogeral {
