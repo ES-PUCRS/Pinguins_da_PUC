@@ -8,15 +8,44 @@ body {
 hr {
     margin-top: 24px;
     border: 0;
-    clear:both;
-    display:block;
-    width: 96%;               
-    background-color:#bbb;
+    clear: both;
+    display: block;
+    width: 96%;
+    background-color: #bbb;
     height: 1px;
 }
 
+
 * {
     outline: none;
+}
+
+table {
+    width: 70%;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+    text-size-adjust: auto;
+    height: 25px;
+    text-align: center;
+}
+
+tr:hover {
+    background-color: rgb(228, 228, 228);
+}
+
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
 }
 
 .profile-pannel {
@@ -54,6 +83,7 @@ hr {
     align-items: center;
 }
 
+
 /* .frame {
     height: 100%;
     width: 100%;
@@ -72,7 +102,8 @@ hr {
 
 
 /*Navigation buttons common class.*/
-.button{
+
+.button {
     font-size: 16px;
     height: 5%;
     cursor: pointer;
@@ -83,9 +114,10 @@ hr {
     font-family: 'Roboto', sans-serif;
 }
 
-.button:hover { 
+.button:hover {
     background-color: #eee;
 }
+
 
 /*
 Button ids. (It will be used in the JS anyway)
@@ -93,6 +125,8 @@ Each top number is the previous number plus 8.
 For instance: 
 #conta: top: (5+8) = 13% 
 */
+
+
 /* #operador{
     top: 5%;
 }
@@ -125,27 +159,29 @@ For instance:
     top: 61%;
 } */
 
+
 /*
 Input classes
 */
-.form-div{
+
+.form-div {
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    position: absolute; 
+    position: absolute;
     top: 5%;
     width: 75%;
     left: 50%;
     transform: translateX(-50%);
 }
 
-.descr-text{
+.descr-text {
     position: absolute;
-    margin-top: 5.5%; /*plus .5 to centralize with the input*/
+    margin-top: 5.5%;
+    /*plus .5 to centralize with the input*/
 }
 
-.row{
+.row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -157,7 +193,8 @@ Input classes
     margin-bottom: 12px
 }
 
-.column{
+
+.column {
     display: flexbox;
     flex-direction: column;
     justify-content: space-between;
@@ -170,7 +207,7 @@ Input classes
     margin: 0 auto
 }
 
-.space-around{
+.space-around {
     display: flex;
     justify-content: space-around;
 }
@@ -208,5 +245,17 @@ Input classes
 
 #rota{
     height: 100%;
+  width: 100%;
+}
+
+.relatoriogeral {
+    height: 100%;
     width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-items: flex-start;
+    display: flex;
+    margin-bottom: 10%;
 }
