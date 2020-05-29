@@ -6,6 +6,7 @@ body {
 }
 
 hr {
+    margin-top: 24px;
     border: 0;
     clear:both;
     display:block;
@@ -14,6 +15,9 @@ hr {
     height: 1px;
 }
 
+* {
+    outline: none;
+}
 
 .profile-pannel {
     display: flex;
@@ -144,11 +148,26 @@ Input classes
 .row{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.rowItems {
+    justify-content: space-between;
+    margin-bottom: 12px
 }
 
 .column{
-    display: flex;
+    display: flexbox;
     flex-direction: column;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.columnMargin {
+    width: 80%; 
+    margin: 0 auto
 }
 
 .space-around{
@@ -177,6 +196,17 @@ Input classes
     justify-content: start;
 }
 
-.form-field {
-    
+#form{
+    width: 100%;
+    margin-top: 24px;
+}
+
+#dataId{
+    min-width: 100%;
+    max-width: 100%;
+}
+
+#rota{
+    height: 100%;
+    width: 100%;
 }
