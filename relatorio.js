@@ -21,51 +21,6 @@ function init() {
     });
 }
 
-// let relatorio = [{
-//     Data: "14/09/2008",
-//     Operador: "Governamental",
-//     NroDoc: "000000123",
-//     Descricao: "Wall Street",
-//     Valor: "8.123.411,00"
-// }, {
-//     Data: "11/09/2008",
-//     Operador: "BR mesmo",
-//     NroDoc: "huehuehue",
-//     Descricao: "Wall streeta",
-//     Valor: "0,42"
-// }, {
-//     Data: "11/09/2008",
-//     Operador: "BR mesmo",
-//     NroDoc: "huehuehue",
-//     Descricao: "Wall streeta",
-//     Valor: "0,42"
-// }, {
-//     Data: "11/09/2008",
-//     Operador: "BR mesmo",
-//     NroDoc: "huehuehue",
-//     Descricao: "Wall streeta",
-//     Valor: "0,42"
-// }, {
-//     Data: "11/09/2008",
-//     Operador: "BR mesmo",
-//     NroDoc: "huehuehue",
-//     Descricao: "Wall streeta",
-//     Valor: "0,42"
-// }, {
-//     Data: "11/09/2008",
-//     Operador: "BR mesmo",
-//     NroDoc: "huehuehue",
-//     Descricao: "Wall streeta",
-//     Valor: "0,42"
-// }, {
-//     Data: "11/09/2008",
-//     Operador: "BR mesmo",
-//     NroDoc: "huehuehue",
-//     Descricao: "Wall streeta",
-//     Valor: "0,42"
-// }];
-
-
 function generateTableHead(table, data) {
     let thead = table.createTHead();
     let row = thead.insertRow();
@@ -100,7 +55,7 @@ function generateTableScreen() {
                 Descricao: "1",
                 Valor: "1"
             });
-            generateTableHead(table, data);
+            // generateTableHead(table, data);
             generateTable(table, res);
         })
 }

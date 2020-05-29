@@ -16,7 +16,6 @@ hr {
     height: 1px;
 }
 
-
 * {
     outline: none;
 }
@@ -36,11 +35,6 @@ th {
 
 tr:hover {
     background-color: rgb(228, 228, 228);
-}
-
-
-tr:nth-child(even) {
-    background-color: #f2f2f2;
 }
 
 table,
@@ -194,7 +188,6 @@ Input classes
     margin-bottom: 12px
 }
 
-
 .column {
     display: flexbox;
     flex-direction: column;
@@ -204,7 +197,7 @@ Input classes
 }
 
 .columnMargin {
-    width: 80%; 
+    width: 80%;
     margin: 0 auto
 }
 
@@ -234,29 +227,62 @@ Input classes
     justify-content: start;
 }
 
-#form{
+#form {
     width: 100%;
     margin-top: 24px;
 }
 
-#dataId{
+#dataId {
     min-width: 100%;
     max-width: 100%;
 }
 
-#rota{
+#rota {
     height: 100%;
-  width: 100%;
+    width: 100%;
 }
 
 .relatoriogeral {
-    height: 100%;
+    height: 60%;
     width: 100%;
     justify-content: center;
     flex-direction: column;
-    align-content: center;
     align-items: center;
     justify-items: flex-start;
     display: flex;
-    margin-bottom: 10%;
+    margin-bottom: 30%;
+    margin-top: 5%;
+}
+
+.relatoriotable {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    overflow-y: auto;
+    justify-content: center;
+    overflow-x: hidden;
+    vertical-align: middle;
+}
+
+.relatoriohead {
+    background-color: #4CAF50;
+    color: white;
+    height: 7%;
+    width: 70%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.relatorio {
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    vertical-align: middle;
+    display: flex;
 }
