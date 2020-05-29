@@ -152,12 +152,22 @@ Input classes
     margin-bottom: 12px;
 }
 
+.rowItems {
+    justify-content: space-between;
+    margin-bottom: 12px
+}
+
 .column{
     display: flexbox;
     flex-direction: column;
     justify-content: space-between;
     width: 80%;
     margin: 0 auto;
+}
+
+.columnMargin {
+    width: 80%; 
+    margin: 0 auto
 }
 
 .space-around{
