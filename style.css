@@ -3,16 +3,22 @@ body {
     height: 100vh;
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    
+    overflow: hidden;
 }
 
 hr {
+    margin-top: 24px;
     border: 0;
     clear: both;
     display: block;
     width: 96%;
     background-color: #bbb;
     height: 1px;
+}
+
+
+* {
+    outline: none;
 }
 
 table {
@@ -33,9 +39,9 @@ tr:hover {
 }
 
 
-/* tr:nth-child(even) {
+tr:nth-child(even) {
     background-color: #f2f2f2;
-} */
+}
 
 table,
 th,
@@ -179,11 +185,27 @@ Input classes
 .row {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 12px;
 }
 
+.rowItems {
+    justify-content: space-between;
+    margin-bottom: 12px
+}
+
+
 .column {
-    display: flex;
+    display: flexbox;
     flex-direction: column;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.columnMargin {
+    width: 80%; 
+    margin: 0 auto
 }
 
 .space-around {
@@ -210,6 +232,21 @@ Input classes
 
 .start {
     justify-content: start;
+}
+
+#form{
+    width: 100%;
+    margin-top: 24px;
+}
+
+#dataId{
+    min-width: 100%;
+    max-width: 100%;
+}
+
+#rota{
+    height: 100%;
+  width: 100%;
 }
 
 .relatoriogeral {
