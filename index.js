@@ -11,6 +11,9 @@ window.onload = () =>{
  * @param {*} rota o nome do arquivo html a ser apontado. Neste projeto, o arquivo html
  * deve estar dentro da pasta `telas`
  */
+
+const operador = document.getElementById("select-operador").innerHTML
+
 function navega(rota) {
     const file = `./telas/${rota}.html`
     $("#rota").load(file)
@@ -59,7 +62,6 @@ function cadastraMovimento() {
     const tipo = document.getElementById("tipo").value
     const valor = document.getElementById("valor").value
     const descricao = document.getElementById("descricao").value
-    const operador = document.getElementById("select-operador").innerHTML
 
     var tabela = document.getElementById('todos-movimentos');
     var numeroLinhas = tabela.rows.length;
@@ -93,4 +95,27 @@ function operadorAtivo() {
         name: obj.innerHTML,
         value: obj.value
     })
+}
+
+function createAccount(){
+    let date = new Date;
+
+    let conta = {
+        id: Math.random(),
+        data_de_criacao: date,
+        operador: operador,
+        saldo: 0,
+        movimentações: []
+    }
+
+    alert(conta)
+    // Integrar esta parte com a persistencia de dados
+}
+
+function closeModal(){
+    document.getElementById('modal').style.display = 'none';
+}
+
+function openModal(){
+    document.getElementById('modal').style.display = 'flex';
 }
