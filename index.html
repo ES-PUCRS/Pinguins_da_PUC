@@ -37,12 +37,21 @@
             <button class="button" id="relGeren" onclick="navega('relatorio-geral')">Relatório Gerencial</button>
         </div>
         <div class="content">
-
             <div id="rota" style="height: 100%; width: 100%;"></div>
         </div>
             <hr>
             
             <div id="rota"></div>
+        </div>
+    </div>
+    <div id="modal" class="modal">
+        <div class="innerModal">
+            <div class="btnDiv">
+                <button onclick="closeModal()">X</button>
+            </div>
+            <h1>Cadastro de Nova Conta</h1>
+            <p>Clique no botão abaixo para criar uma nova conta.</p>
+            <button onclick="createAccount()">Criar Conta</button>
         </div>
     </div>
 </body>
