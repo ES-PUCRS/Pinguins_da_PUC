@@ -122,6 +122,14 @@ td {
     background-color: #eee;
 }
 
+.send{
+    border-bottom: 1px solid black;
+}
+
+.criarConta{
+    width: 100%;
+}
+
 
 /*
 Button ids. (It will be used in the JS anyway)

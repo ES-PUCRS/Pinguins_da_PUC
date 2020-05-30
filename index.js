@@ -1,3 +1,6 @@
+let proximaConta = 10;
+let operador;
+
 window.onload = () =>{
      const operadores = []
      localStorage.setItem("operadores", JSON.stringify(operadores))
@@ -63,6 +66,7 @@ window.onload = () =>{
  
     localStorage.setItem('contas', JSON.stringify(contas))
     console.log(JSON.parse(localStorage.getItem('contas')))
+    operador = operadores[0].name
 }
 
 function navega(rota) {
@@ -145,7 +149,8 @@ function cadastraMovimento() {
 function trocaOperador(value) {
     const operadores = JSON.parse(localStorage.getItem('operadores'))
     
-    operadores.forEach(e => e.active = (e.cpf == value))
+    operador = operadores.forEach(e => e.active = (e.cpf == value))
+    console.log(operador)
 
     localStorage.setItem('operadores', JSON.stringify(operadores))
 }
@@ -154,6 +159,8 @@ function operadorAtivo() {
     const operadores = JSON.parse(localStorage.getItem('operadores'))
 
     const active = operadores.filter(e => e.active)[0]
+    operador = active.name;
+    console.log(operador)
     return (active ? active.name : operadores[0].name)
 }
 
@@ -165,7 +172,7 @@ function createAccount(){
     let conta = {
         id: id,
         data_de_criacao: date,
-        operador: operadorAtivo(),
+        operador: operador,
         saldo: 0,
         movimentações: []
     }
@@ -217,4 +224,10 @@ function populateAccounts() {
     let headers = ['ID', 'DATA CRIAÇAO', 'OPERADOR', 'SALDO', 'MOVIMENTAÇOES'];
     generateTableHead(table, headers);
     generateTable(table, contas);
+}
+
+function transfereSaldo (conta, valor) {
+    console.log(conta, valor);
+
+
 }
