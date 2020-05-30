@@ -2,11 +2,6 @@ let proximaConta = 10;
 let operador;
 let contaAtual;
 
-window.onload = () =>{
-     const operadores = []
-     localStorage.setItem("operadores", JSON.stringify(operadores))
-}
-
 /**
  * Alterna a tela de acordo com o parâmetro `rota`.
  * @param {*} rota o nome do arquivo html a ser apontado. Neste projeto, o arquivo html
@@ -53,6 +48,7 @@ window.onload = () =>{
     ]
 
     localStorage.setItem('operadores', JSON.stringify(operadores))
+    populateOperators()
 
     const contas = []
     for (let i = 0; i < 10; i ++) {
@@ -66,8 +62,6 @@ window.onload = () =>{
     }
  
     localStorage.setItem('contas', JSON.stringify(contas))
-    console.log(JSON.parse(localStorage.getItem('contas')))
-    operador = operadores[0].name
 }
 
 function navega(rota) {
@@ -93,6 +87,7 @@ function cadastraOperador() {
     operators.push({name: name, cpf: cpf, active: false})
 
     localStorage.setItem('operadores', JSON.stringify(operators))
+    populateOperators()
 
     alert('Operador cadastrado.')
 }
@@ -150,8 +145,7 @@ function cadastraMovimento() {
 function trocaOperador(value) {
     const operadores = JSON.parse(localStorage.getItem('operadores'))
     
-    operador = operadores.forEach(e => e.active = (e.cpf == value))
-    console.log(operador)
+    operadores.forEach(e => e.active = (e.cpf == value))
 
     localStorage.setItem('operadores', JSON.stringify(operadores))
 }
@@ -160,8 +154,6 @@ function operadorAtivo() {
     const operadores = JSON.parse(localStorage.getItem('operadores'))
 
     const active = operadores.filter(e => e.active)[0]
-    operador = active.name;
-    console.log(operador)
     return (active ? active.name : operadores[0].name)
 }
 
@@ -173,7 +165,7 @@ function createAccount(){
     let conta = {
         id: id,
         data_de_criacao: date,
-        operador: operador,
+        operador: operadorAtivo(),
         saldo: 0,
         movimentações: []
     }
