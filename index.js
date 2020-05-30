@@ -1,3 +1,11 @@
+window.onload = () =>{
+     const operadores = []
+     localStorage.setItem("operadores", JSON.stringify(operadores))
+}
+
+
+
+
 /**
  * Alterna a tela de acordo com o parâmetro `rota`.
  * @param {*} rota o nome do arquivo html a ser apontado. Neste projeto, o arquivo html
@@ -74,6 +82,26 @@ function cadastraOperador() {
     localStorage.setItem('operadores', JSON.stringify(operators))
 
     alert('Operador cadastrado.')
+}
+
+function mascaraData( campo, e )
+{
+	var kC = (document.all) ? event.keyCode : e.keyCode;
+	var data = campo.value;
+	
+	if( kC!=8 && kC!=46 )
+	{
+		if( data.length==2 )
+		{
+			campo.value = data += '/';
+		}
+		else if( data.length==5 )
+		{
+			campo.value = data += '/';
+		}
+		else
+			campo.value = data;
+	}
 }
 
 function cadastraMovimento() {
