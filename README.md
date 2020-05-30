@@ -8,6 +8,7 @@ Repositório do Tabalho 1 GCS 2020/1
 - Gustavo Oliveira
 - Hiago Luzardo
 - Lucas Cardoso
+- Lucas Cunha
 - Lucas Nardon
 - Pedro Rogoski
 - Vinícius Bazanella

@@ -1,0 +1,60 @@
+<b>Movimentos por Operador</b>
+<div id="form" style="width: 100%; margin-top: 24px;">
+<div class="column" style="width: 80%; margin: 0 auto;">
+      <div class="row">
+          <div class="column">
+              <div>Operador Ativo</div>
+              <select id="select-operador" onchange="operadorAtivo()">
+                  </select>
+          </div>
+      </div>
+      <div class="row" style="justify-content: space-between; margin-bottom: 12px;">
+          <div class="column form-field">
+              <div>Data</div>
+              <input type="text" name="data" id="data" maxlength="10" onkeypress="mascaraData( this, event )"/>
+          </div>
+
+          <div class="column form-field">
+              <div>Tipo</div>
+              <input type="text" name="tipo" id="tipo" />
+          </div>
+
+          <div class="column form-field">
+              <div>Valor</div>
+              <input type="text" name="valor" id="valor" />
+          </div>
+      </div>
+      <div class="row">
+          <div class="column stretch">
+              <div>Descrição</div>
+              <textarea type="text" name="descricao" id="descricao" style="min-width: 100%; max-width: 100%;"></textarea>
+          </div>
+      </div>
+      <button class="button" id="operador" onclick="cadastraMovimento()"> Enviar</button>
+  </div>
+
+</div>
+<hr style="margin-top: 24px;">
+
+<div class="container" style="justify-content: start; flex-direction: column;" >
+        <table style="border-collapse: collapse" id="todos-movimentos">
+            <thead>
+              <tr>
+                <th style="border: 1px solid black">Data</th>
+                <th style="border: 1px solid black">Operador</th>
+                <th style="border: 1px solid black">NroDoc</th>
+                <th style="border: 1px solid black">Descrição</th>
+                <th style="border: 1px solid black">Valor</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- <tr>
+                <td style="border: 1px solid black">xx</td>
+                <td style="border: 1px solid black">xx</td>
+                <td style="border: 1px solid black">xx</td>
+                <td style="border: 1px solid black">xx</td>
+                <td style="border: 1px solid black">xx</td>
+              </tr> -->
+            </tbody>
+        </table>
+</div>

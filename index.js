@@ -37,6 +37,25 @@ function cadastraOperador() {
     console.log(localStorage)
 }
 
+function cadastraConta() {
+    const identificador = document.getElementById("conta-identificador").value
+    const operador = document.getElementById("operador-cpf").value
+
+
+    const conta = {
+        identificador: identificador,
+        saldo: 0.00,
+        operador: operador,
+        data: Date.now()
+    }
+
+    const contas = JSON.parse(localStorage.getItem("contas"))
+    contas.push(conta)
+    localStorage.setItem("contas", JSON.stringify(contas))
+    console.log(localStorage)
+}
+
+
 function mascaraData( campo, e )
 {
 	var kC = (document.all) ? event.keyCode : e.keyCode;
@@ -95,21 +114,6 @@ function operadorAtivo() {
         name: obj.innerHTML,
         value: obj.value
     })
-}
-
-function createAccount(){
-    let date = new Date;
-
-    let conta = {
-        id: Math.random(),
-        data_de_criacao: date,
-        operador: operador,
-        saldo: 0,
-        movimentações: []
-    }
-
-    alert(conta)
-    // Integrar esta parte com a persistencia de dados
 }
 
 function closeModal(){
