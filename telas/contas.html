@@ -5,22 +5,14 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/style.css" />
 </head>
-
-<div class="row">
-    <div class="column">
-        <div>Operador Ativo</div>
-        <select id="select-operador" onchange="trocaOperador(event.target.value)"></select>
-    </div>
-
-</div>
 <div class="column">
     <div>
         <div>Identificador</div>
         <input id="num-conta" type="text" name="nome">
+        <button class="button send" onclick="createAccount()">Criar conta</button>
     </div>
-    <button class="button" onclick="createAccount()">Criar conta</button>
 
-    <div class="relatoriogeral">
+    <div class="criarConta">
         <h3> CONTAS</h3>
         <table id="table-contas">
             <thead>

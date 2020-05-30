@@ -20,20 +20,20 @@
                 <img src="./img/user.svg" class="user-img">
             </div>
 
+            <div class="row">
+                <div class="column">
+                    <div>Operador Ativo</div>
+                    <select id="select-operador" onchange="trocaOperador(event.target.value)"></select>
+                </div>
+            </div>
+
             <div class="subtitle"> Opções </div>
             <button class="button" id="operador" onclick="navega('operador')"> Criar Operador</button>
-            <button class="button" id="conta" onclick="navega('contas')">Conta</button>
-            <hr>
-
-            <div class="subtitle"> Movimentações </div>
-            <button class="button" id="allMov" onclick="navega('todos-movimentos')">Todos Movimentos</button>
-            <button class="button" id="perMov" onclick="navega('teste2')">Movimentos por Período</button>
-            <button class="button" id="opMov">Movimentos por Operador</button>
-            <button class="button" id="typeMov">Movimentos por Tipo</button>
+            <button class="button" id="conta" onclick="navega('contas')">Painel de Contas</button>
+            <button class="button" id="transferencia" onclick="navega('editarConta')">Detalhes de Conta</button>
             <hr>
 
             <div class="subtitle"> Outras Opções </div>
-            <button class="button" id="transferencia">Transferências</button>
             <button class="button" id="relGeren" onclick="navega('relatorio-geral')">Relatório Gerencial</button>
         </div>
         <div class="content">

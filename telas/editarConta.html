@@ -1,18 +1,7 @@
 <div id="form" style="width: 100%; margin-top: 24px;">
   <div class="column" style="width: 80%; margin: 0 auto;">
-      <div class="row">
-          <div class="column">
-              <div>Operador Ativo</div>
-              <select id="select-operador" onchange="trocaOperador(event.target.value)">
-                  </select>
-          </div>
-      </div>
+    <h2>ADICIONAR SALDO</h2>
       <div class="row" style="justify-content: space-between; margin-bottom: 12px;">
-          <div class="column form-field">
-              <div>Data</div>
-              <input type="text" name="data" id="data" maxlength="10" onkeypress="mascaraData( this, event )"/>
-          </div>
-
           <div class="column form-field">
               <div>Tipo</div>
               <input type="text" name="tipo" id="tipo" />
@@ -20,7 +9,7 @@
 
           <div class="column form-field">
               <div>Valor</div>
-              <input type="text" name="valor" id="valor" />
+              <input type="number" name="valor" id="valor" />
           </div>
       </div>
       <div class="row">
@@ -29,7 +18,24 @@
               <textarea type="text" name="descricao" id="descricao" style="min-width: 100%; max-width: 100%;"></textarea>
           </div>
       </div>
-      <button class="button" id="operador" onclick="cadastraMovimento()"> Enviar</button>
+      <button class="button send" id="operador" onclick="cadastraMovimento()"> ADICIONAR SALDO </button>
+  </div>
+
+  <div class="column" style="width: 80%; margin: 0 auto;">
+    <h2>TRANSFERIR SALDO</h2>
+      <div class="row" style="justify-content: space-between; margin-bottom: 12px;">
+          <div class="form-field">
+              <div>Valor</div>
+              <input type="number" name="valor" id="valorTransferencia" />
+          </div>
+      </div>
+      <div class="row" style="justify-content: space-between; margin-bottom: 12px;">
+        <div class="form-field">
+            <div>Conta de Destino (ID)</div>
+            <input type="number" name="destino" id="destino" />
+        </div>
+    </div>
+      <button class="button send" id="operador" onclick="transfereSaldo(document.getElementById('destino').value, document.getElementById('valorTransferencia').value)"> TRANSFERIR SALDO </button>
   </div>
 
 </div>
