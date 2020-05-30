@@ -4,24 +4,76 @@
  * deve estar dentro da pasta `telas`
  */
 
-const operador = document.getElementById("select-operador").innerHTML
+ window.onload = () => {
+    const operadores = [
+        {
+            name: 'Vinicius Bazanella',
+            cpf: '123123',
+            active: false
+        },
+        {
+            name: 'Cleyson Oliveira',
+            cpf: '123124',
+            active: false
+        },
+        {
+            name: 'Lucas Nardon',
+            cpf: '123125',
+            active: false
+        },
+        {
+            name: 'Diego Klein',
+            cpf: '123126',
+            active: false
+        },
+        {
+            name: 'Lucas Cardoso',
+            cpf: '123127',
+            active: false
+        },
+        {
+            name: 'Gustavo Gallarreta',
+            cpf: '123128',
+            active: false
+        },
+        {
+            name: 'Lucas Teixeira',
+            cpf: '123129',
+            active: false
+        }
+    ]
+    
+    const contas = []
+ 
+    localStorage.setItem('operadores', JSON.stringify(operadores))
+    localStorage.setItem('contas', JSON.stringify(contas))
+}
 
 function navega(rota) {
     const file = `./telas/${rota}.html`
     $("#rota").load(file)
-    if (rota === "relatorio-geral") {
-        generateTableScreen();
-    }
+}
+
+function populateOperators() {
+    const operadores = JSON.parse(localStorage.getItem('operadores'))
+
+    const options = document.getElementById('select-operador').options
+    operadores.forEach((e, i) => {
+        options[i] = new Option(e.name, e.cpf)
+    })
 }
 
 function cadastraOperador() {
-    const nome = document.getElementById("operador-nome").value
-    const cpf = document.getElementById("operador-cpf").value
+    const operators = JSON.parse(localStorage.getItem('operadores'))
 
-    const options = document.getElementById("select-operador").options
+    const name = document.getElementById('operador-nome').value
+    const cpf = document.getElementById('operador-cpf').value
 
-    options[options.length] = new Option(nome, cpf)
-    alert('Operador cadastrado!')
+    operators.push({name: name, cpf: cpf, active: false})
+
+    localStorage.setItem('operadores', JSON.stringify(operators))
+
+    alert('Operador cadastrado.')
 }
 
 function cadastraMovimento() {
@@ -54,24 +106,18 @@ function cadastraMovimento() {
     celula5.style = "border: 1px solid black";
 }
 
-function operadorAtivo() {
-    const select = document.getElementById("select-operador")
+function trocaOperador(value) {
+    const operadores = JSON.parse(localStorage.getItem('operadores'))
+    
+    operadores.forEach(e => e.active = (e.cpf == value))
 
-    const obj = select.options[select.selectedIndex]
-    return ({
-        name: obj.innerHTML,
-        value: obj.value
-    })
+    localStorage.setItem('operadores', JSON.stringify(operadores))
 }
 
-function mostrarMovimento(){
+function operadorAtivo() {
+    const operadores = JSON.parse(localStorage.getItem('operadores'))
 
-    if(document.getElementById('form').style.display == 'none'){
-        document.getElementById('form').style.display = 'block';
-    }else if(document.getElementById('form').style.display == 'block'){
-        document.getElementById('form').style.display = 'none';
-    }
-
+    return operadores.filter(e => e.active)[0].name || operadores[0].name
 }
 
 function createAccount(){

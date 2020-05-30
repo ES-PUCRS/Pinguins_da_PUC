@@ -3,7 +3,7 @@
       <div class="row">
           <div class="column">
               <div>Operador Ativo</div>
-              <select id="select-operador" onchange="operadorAtivo()">
+              <select id="select-operador" onchange="trocaOperador(event.target.value)">
                   </select>
           </div>
       </div>
@@ -57,3 +57,7 @@
             </tbody>
         </table>
 </div>
+
+<script>
+  populateOperators()
+</script>
