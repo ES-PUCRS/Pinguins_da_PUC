@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/style.css" />
+</head>
+
+<div class="row">
+    <div class="column">
+        <div>Operador Ativo</div>
+        <select id="select-operador" onchange="trocaOperador(event.target.value)"></select>
+    </div>
+
+</div>
+<div class="column">
+    <div>
+        <div>Identificador</div>
+        <input id="num-conta" type="text" name="nome">
+    </div>
+    <button class="button" onclick="createAccount()">Criar conta</button>
+
+    <div class="relatoriogeral">
+        <h3> CONTAS</h3>
+        <table id="table-contas">
+            <thead>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <script src="./../relatorio.js"></script>
+    </div>
+</div>
+
+<script>
+    populateAccounts()
+    populateOperators()
+</script>
+
+

@@ -47,11 +47,22 @@ window.onload = () =>{
             active: false
         }
     ]
-    
-    const contas = []
- 
+
     localStorage.setItem('operadores', JSON.stringify(operadores))
+
+    const contas = []
+    for (let i = 0; i < 10; i ++) {
+        contas.push({
+            id: i,
+            data_de_criacao: new Date(),
+            operador: !!operadores[i] ? operadores[i].name : operadorAtivo(),
+            saldo: 0,
+            movimentações: []
+        })
+    }
+ 
     localStorage.setItem('contas', JSON.stringify(contas))
+    console.log(JSON.parse(localStorage.getItem('contas')))
 }
 
 function navega(rota) {
@@ -64,7 +75,7 @@ function populateOperators() {
 
     const options = document.getElementById('select-operador').options
     operadores.forEach((e, i) => {
-        options[i] = new Option(e.name, e.cpf)
+        options[i] = new Option(e.name, e.cpf, e.active, e.active)
     })
 }
 
@@ -142,23 +153,29 @@ function trocaOperador(value) {
 function operadorAtivo() {
     const operadores = JSON.parse(localStorage.getItem('operadores'))
 
-    return operadores.filter(e => e.active)[0].name || operadores[0].name
+    const active = operadores.filter(e => e.active)[0]
+    return (active ? active.name : operadores[0].name)
 }
 
 function createAccount(){
     let date = new Date;
 
+    const id = document.getElementById('num-conta').value
+
     let conta = {
-        id: Math.random(),
+        id: id,
         data_de_criacao: date,
-        operador: operador,
+        operador: operadorAtivo(),
         saldo: 0,
         movimentações: []
     }
+
     let contas = JSON.parse(localStorage.getItem('contas'))
     contas.push(conta);
     localStorage.setItem('contas', JSON.stringify(contas))
-    alert('Conta Cadastrada!')
+    alert(`Conta ${id} cadastrada!`)
+
+    populateAccounts()
 }
 
 function closeModal(){
@@ -167,4 +184,37 @@ function closeModal(){
 
 function openModal(){
     document.getElementById('modal').style.display = 'flex';
+}
+
+function generateTableHead(table, data) {
+    let thead = table.createTHead();
+    let row = thead.insertRow();
+    for (let key of data) {
+        let th = document.createElement("th");
+        let text = document.createTextNode(key);
+        th.appendChild(text);
+        row.appendChild(th);
+    }
+}
+
+function generateTable(table, data) {
+    for (let element of data) {
+        let row = table.insertRow();
+        for (key in element) {
+            let cell = row.insertCell();
+            let text = document.createTextNode(element[key]);
+            cell.appendChild(text);
+        }
+    }
+}
+
+function populateAccounts() {
+    const contas = JSON.parse(localStorage.getItem('contas'))
+
+    let table = document.getElementById('table-contas');
+    table.innerHTML = ''
+
+    let headers = ['ID', 'DATA CRIAÇAO', 'OPERADOR', 'SALDO', 'MOVIMENTAÇOES'];
+    generateTableHead(table, headers);
+    generateTable(table, contas);
 }
