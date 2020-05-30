@@ -1,5 +1,6 @@
 let proximaConta = 10;
 let operador;
+let contaAtual;
 
 window.onload = () =>{
      const operadores = []
@@ -228,6 +229,9 @@ function populateAccounts() {
 
 function transfereSaldo (conta, valor) {
     console.log(conta, valor);
+}
 
-
+function selecionaConta () {
+    contaAtual = document.getElementById('idConta').value;
+    console.log(contaAtual)
 }
