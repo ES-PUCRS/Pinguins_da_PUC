@@ -1,3 +1,11 @@
+window.onload = () =>{
+     const operadores = []
+     localStorage.setItem("operadores", JSON.stringify(operadores))
+}
+
+
+
+
 /**
  * Alterna a tela de acordo com o parâmetro `rota`.
  * @param {*} rota o nome do arquivo html a ser apontado. Neste projeto, o arquivo html
@@ -15,10 +23,35 @@ function cadastraOperador() {
     const nome = document.getElementById("operador-nome").value
     const cpf = document.getElementById("operador-cpf").value
 
-    const options = document.getElementById("select-operador").options
+    const operador = {
+        name: nome,
+        cpf: cpf
+    }
 
-    options[options.length] = new Option(nome, cpf)
-    alert('Operador cadastrado!')
+    const operadores = JSON.parse(localStorage.getItem("operadores"))
+    operadores.push(operador)
+    localStorage.setItem("operadores", JSON.stringify(operadores))
+    console.log(localStorage)
+}
+
+function mascaraData( campo, e )
+{
+	var kC = (document.all) ? event.keyCode : e.keyCode;
+	var data = campo.value;
+	
+	if( kC!=8 && kC!=46 )
+	{
+		if( data.length==2 )
+		{
+			campo.value = data += '/';
+		}
+		else if( data.length==5 )
+		{
+			campo.value = data += '/';
+		}
+		else
+			campo.value = data;
+	}
 }
 
 function cadastraMovimento() {
@@ -60,14 +93,4 @@ function operadorAtivo() {
         name: obj.innerHTML,
         value: obj.value
     })
-}
-
-function mostrarMovimento(){
-
-    if(document.getElementById('form').style.display == 'none'){
-        document.getElementById('form').style.display = 'block';
-    }else if(document.getElementById('form').style.display == 'block'){
-        document.getElementById('form').style.display = 'none';
-    }
-
 }
