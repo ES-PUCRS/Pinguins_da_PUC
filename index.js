@@ -3,9 +3,6 @@ window.onload = () =>{
      localStorage.setItem("operadores", JSON.stringify(operadores))
 }
 
-
-
-
 /**
  * Alterna a tela de acordo com o parâmetro `rota`.
  * @param {*} rota o nome do arquivo html a ser apontado. Neste projeto, o arquivo html
@@ -158,9 +155,10 @@ function createAccount(){
         saldo: 0,
         movimentações: []
     }
-
-    alert(conta)
-    // Integrar esta parte com a persistencia de dados
+    let contas = JSON.parse(localStorage.getItem('contas'))
+    contas.push(conta);
+    localStorage.setItem('contas', JSON.stringify(contas))
+    alert('Conta Cadastrada!')
 }
 
 function closeModal(){
