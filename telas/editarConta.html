@@ -1,11 +1,11 @@
 <div id="form" style="width: 100%; margin-top: 24px;">
 
   <div class="column" style="width: 80%; margin: 0 auto;">
-    <h2>Digite a conta para trabalhar</h2>
+    <h2>Selecione a conta para trabalhar</h2>
       <div class="row" style="justify-content: space-between; margin-bottom: 12px;">
           <div class="form-field">
               <div>ID da Conta</div>
-              <input type="number" name="tipo" id="idConta" />
+              <select id="conta-origem" style="width: 100%;"></select>
           </div>
       </div>
       <button class="button send" id="operador" onclick="selecionaConta()"> Selecionar Conta </button>
@@ -16,13 +16,20 @@
       <div class="row" style="justify-content: space-between; margin-bottom: 12px;">
           <div class="column form-field">
               <div>Tipo</div>
-              <input type="text" name="tipo" id="tipo" />
+              <select id="transfer-type">
+                <option value="1">Aplicação</option>
+                <option value="2">Saque</option>
+              </select>
           </div>
 
           <div class="column form-field">
               <div>Valor</div>
               <input type="number" name="valor" id="valor" />
           </div>
+          <div class="column form-field">
+            <div>Nº Documento</div>
+            <input name="valor" id="doc" />
+        </div>
       </div>
       <div class="row">
           <div class="column stretch">
@@ -30,7 +37,7 @@
               <textarea type="text" name="descricao" id="descricao" style="min-width: 100%; max-width: 100%;"></textarea>
           </div>
       </div>
-      <button class="button send" id="operador" onclick="cadastraMovimento()"> ADICIONAR SALDO </button>
+      <button class="button send" id="operador" onclick="movimento()"> ADICIONAR SALDO </button>
   </div>
 
   <div class="column" style="width: 80%; margin: 0 auto;">
@@ -43,11 +50,11 @@
       </div>
       <div class="row" style="justify-content: space-between; margin-bottom: 12px;">
         <div class="form-field">
-            <div>Conta de Destino (ID)</div>
-            <input type="number" name="destino" id="destino" />
+          <div>Conta de Destino (ID)</div>
+          <select id="conta-destino" style="width: 100%;"></select>
         </div>
     </div>
-      <button class="button send" id="operador" onclick="transfereSaldo(document.getElementById('destino').value, document.getElementById('valorTransferencia').value)"> TRANSFERIR SALDO </button>
+      <button class="button send" id="operador" onclick="transferencia()"> TRANSFERIR SALDO </button>
   </div>
 
 </div>
@@ -65,17 +72,13 @@
               </tr>
             </thead>
             <tbody>
-              <!-- <tr>
-                <td style="border: 1px solid black">xx</td>
-                <td style="border: 1px solid black">xx</td>
-                <td style="border: 1px solid black">xx</td>
-                <td style="border: 1px solid black">xx</td>
-                <td style="border: 1px solid black">xx</td>
-              </tr> -->
             </tbody>
         </table>
 </div>
 
 <script>
   populateOperators()
+
+  accountSelect('conta-origem')
+  accountSelect('conta-destino')
 </script>

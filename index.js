@@ -57,7 +57,7 @@ let contaAtual;
             data_de_criacao: new Date(),
             operador: !!operadores[i] ? operadores[i].name : operadorAtivo(),
             saldo: 0,
-            movimentações: []
+            movimentacoes: []
         })
     }
  
@@ -112,35 +112,35 @@ function mascaraData( campo, e )
 	}
 }
 
-function cadastraMovimento() {
-    const data = document.getElementById("data").value
-    const tipo = document.getElementById("tipo").value
-    const valor = document.getElementById("valor").value
-    const descricao = document.getElementById("descricao").value
+// function cadastraMovimento() {
+//     const data = document.getElementById("data").value
+//     const tipo = document.getElementById("tipo").value
+//     const valor = document.getElementById("valor").value
+//     const descricao = document.getElementById("descricao").value
 
-    var tabela = document.getElementById('todos-movimentos');
-    var numeroLinhas = tabela.rows.length;
-    var linha = tabela.insertRow(numeroLinhas);
-    var celula1 = linha.insertCell(0);
-    var celula2 = linha.insertCell(1);
-    var celula3 = linha.insertCell(2);
-    var celula4 = linha.insertCell(3);
-    var celula5 = linha.insertCell(4);
-    celula1.innerHTML = data;
-    celula2.innerHTML = operador;
-    celula3.innerHTML = tipo;
-    celula4.innerHTML = descricao;
-    celula5.innerHTML = 'R$ ' + valor;
+//     var tabela = document.getElementById('todos-movimentos');
+//     var numeroLinhas = tabela.rows.length;
+//     var linha = tabela.insertRow(numeroLinhas);
+//     var celula1 = linha.insertCell(0);
+//     var celula2 = linha.insertCell(1);
+//     var celula3 = linha.insertCell(2);
+//     var celula4 = linha.insertCell(3);
+//     var celula5 = linha.insertCell(4);
+//     celula1.innerHTML = data;
+//     celula2.innerHTML = operador;
+//     celula3.innerHTML = tipo;
+//     celula4.innerHTML = descricao;
+//     celula5.innerHTML = 'R$ ' + valor;
 
-    //adding some style via js
+//     //adding some style via js
 
-    linha.style = "border: 1px solid black";
-    celula1.style = "border: 1px solid black";
-    celula2.style = "border: 1px solid black";
-    celula3.style = "border: 1px solid black";
-    celula4.style = "border: 1px solid black";
-    celula5.style = "border: 1px solid black";
-}
+//     linha.style = "border: 1px solid black";
+//     celula1.style = "border: 1px solid black";
+//     celula2.style = "border: 1px solid black";
+//     celula3.style = "border: 1px solid black";
+//     celula4.style = "border: 1px solid black";
+//     celula5.style = "border: 1px solid black";
+// }
 
 function trocaOperador(value) {
     const operadores = JSON.parse(localStorage.getItem('operadores'))
@@ -167,7 +167,7 @@ function createAccount(){
         data_de_criacao: date,
         operador: operadorAtivo(),
         saldo: 0,
-        movimentações: []
+        movimentacoes: []
     }
 
     let contas = JSON.parse(localStorage.getItem('contas'))
@@ -219,11 +219,64 @@ function populateAccounts() {
     generateTable(table, contas);
 }
 
-function transfereSaldo (conta, valor) {
-    console.log(conta, valor);
+function accountSelect(id) {
+    const options = document.getElementById(id).options
+
+    const accounts = JSON.parse(localStorage.getItem('contas'))
+    accounts.forEach((e, i) => options[i] = new Option(e.id, e.id))
 }
 
-function selecionaConta () {
-    contaAtual = document.getElementById('idConta').value;
-    console.log(contaAtual)
+function movimento() {
+    const id = document.getElementById('conta-origem').value
+    
+    const accounts = JSON.parse(localStorage.getItem('contas'))
+    
+    const type = document.getElementById('transfer-type').value
+    const doc = document.getElementById('doc').value
+    const descricao = document.getElementById('descricao').value
+    let value = parseInt(document.getElementById('valor').value)
+
+    if (type == 2) value *= -1
+
+    const movimento = {
+        data: new Date().toLocaleDateString(),
+        operador: operadorAtivo(),
+        descricao: descricao,
+        valor: value
+    }
+
+    accounts
+        .filter(e => e.id == id)
+        .forEach(e => {
+            if (!(type == 2 && e.saldo < Math.abs(value))) {
+                e.saldo = e.saldo + value
+                e.movimentacoes.push(movimento)
+
+                alert('Movimentação realizada com sucesso.')
+            } else {
+                alert("Saldo insuficiente para realizar a operação")
+            }
+        })
+
+    localStorage.setItem('contas', JSON.stringify(accounts))
+}
+
+function transferencia() {
+    const from = document.getElementById('conta-origem').selectedIndex
+    const to = document.getElementById('conta-destino').selectedIndex
+
+    const value = parseInt(document.getElementById('valorTransferencia').value)
+
+    const accounts = JSON.parse(localStorage.getItem('contas'))
+
+    if (accounts[from].saldo >= value) {
+        accounts[from].saldo -= value
+        accounts[to].saldo += value
+
+        alert("Saldo insuficiente para realizar a operação")
+    } else {
+        localStorage.setItem('contas', JSON.stringify(accounts))
+
+        alert('Valor transferido.')
+    }
 }
