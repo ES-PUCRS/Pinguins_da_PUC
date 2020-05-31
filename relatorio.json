@@ -1,7 +1,109 @@
 [{
     "Data": "14/09/2008",
-    "Operador": "Governamental",
-    "NroDoc": "000000123",
-    "Descricao": "Wall Street",
-    "Valor": "8.123.411,00"
+    "Operador": "COP",
+    "NroDoc": "123",
+    "Descricao": "Manutenção de computadores",
+    "Valor": "-8.123.,00"
+},{
+    "Data": "15/06/2010",
+    "Operador": "IHF",
+    "NroDoc": "45910",
+    "Descricao": "Compra de Monitores",
+    "Valor": "-13.200,40"
+},{
+    "Data": "18/09/2013",
+    "Operador": "HKS",
+    "NroDoc": "256",
+    "Descricao": "Fatura 18/2013",
+    "Valor": "7.430,40"
+},{
+    "Data": "20/05/2015",
+    "Operador": "PRM",
+    "NroDoc": "65196",
+    "Descricao": "Compra de computador",
+    "Valor": "-4.500,00"
+},{
+    "Data": "22/06/2017",
+    "Operador": "COP",
+    "NroDoc": "15",
+    "Descricao": "Compra de impressora 3d",
+    "Valor": "-2.499,00"
+},{
+    "Data": "15/12/2017",
+    "Operador": "GBM",
+    "NroDoc": "856",
+    "Descricao": "Compra  impressoras empresa",
+    "Valor": "-8.699,99"
+},{
+    "Data": "10/02/2018",
+    "Operador": "CMB",
+    "NroDoc": "78954",
+    "Descricao": "Venda Computadores antigos",
+    "Valor": "5.920,50"
+},{
+    "Data": "14/05/2018",
+    "Operador": "LVS",
+    "NroDoc": "325",
+    "Descricao": "Compra Sofa",
+    "Valor": "-2.177,91"
+},{
+    "Data": "15/06/2018",
+    "Operador": "DLS",
+    "NroDoc": "55",
+    "Descricao": "Compra microfone reuniões",
+    "Valor": "-356,00"
+},{
+    "Data": "11/08/2018",
+    "Operador": "DSL",
+    "NroDoc": "412",
+    "Descricao": "Fatura 11/18",
+    "Valor": "9.490,00"
+},{
+    "Data": "15/08/2018",
+    "Operador": "LES",
+    "NroDoc": "44758",
+    "Descricao": "Serviços de limpeza",
+    "Valor": "-300,99"
+},{
+    "Data": "17/09/2018",
+    "Operador": "AMN",
+    "NroDoc": "87",
+    "Descricao": "Compra projetor",
+    "Valor": "-1.349,00"
+},{
+    "Data": "11/10/2018",
+    "Operador": "EMR",
+    "NroDoc": "24",
+    "Descricao": "Compra cadeiras de escritório",
+    "Valor": "-5.900,00"
+},{
+    "Data": "15/10/2018",
+    "Operador": "LES",
+    "NroDoc": "27473",
+    "Descricao": "Conserto de lampadas",
+    "Valor": "-293,99"
+},{
+    "Data": "18/11/2018",
+    "Operador": "LHC",
+    "NroDoc": "50159",
+    "Descricao": "Compra de insumos",
+    "Valor": "-4.930,00"
+},{
+    "Data": "19/05/2019",
+    "Operador": "AMB",
+    "NroDoc": "96874",
+    "Descricao": "Aluguel Escritório",
+    "Valor": "-10.000,00"
+},{
+    "Data": "22/09/2019",
+    "Operador": "LHC",
+    "NroDoc": "57843",
+    "Descricao": "Instalação ar condicionado",
+    "Valor": "-5.500"
+},{
+    "Data": "02/02/2020",
+    "Operador": "DLS",
+    "NroDoc": "78845",
+    "Descricao": "Fatura 2/2020",
+    "Valor": "15.988,50"
 }]
