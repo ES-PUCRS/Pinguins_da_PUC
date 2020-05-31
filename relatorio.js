@@ -1,6 +1,3 @@
-/** MOCK DE DADOS */
-// var relatorios;
-
 function loadJSON(callback) {
 
     var xobj = new XMLHttpRequest();
@@ -20,51 +17,6 @@ function init() {
         relatorios = JSON.parse(response);
     });
 }
-
-// let relatorio = [{
-//     Data: "14/09/2008",
-//     Operador: "Governamental",
-//     NroDoc: "000000123",
-//     Descricao: "Wall Street",
-//     Valor: "8.123.411,00"
-// }, {
-//     Data: "11/09/2008",
-//     Operador: "BR mesmo",
-//     NroDoc: "huehuehue",
-//     Descricao: "Wall streeta",
-//     Valor: "0,42"
-// }, {
-//     Data: "11/09/2008",
-//     Operador: "BR mesmo",
-//     NroDoc: "huehuehue",
-//     Descricao: "Wall streeta",
-//     Valor: "0,42"
-// }, {
-//     Data: "11/09/2008",
-//     Operador: "BR mesmo",
-//     NroDoc: "huehuehue",
-//     Descricao: "Wall streeta",
-//     Valor: "0,42"
-// }, {
-//     Data: "11/09/2008",
-//     Operador: "BR mesmo",
-//     NroDoc: "huehuehue",
-//     Descricao: "Wall streeta",
-//     Valor: "0,42"
-// }, {
-//     Data: "11/09/2008",
-//     Operador: "BR mesmo",
-//     NroDoc: "huehuehue",
-//     Descricao: "Wall streeta",
-//     Valor: "0,42"
-// }, {
-//     Data: "11/09/2008",
-//     Operador: "BR mesmo",
-//     NroDoc: "huehuehue",
-//     Descricao: "Wall streeta",
-//     Valor: "0,42"
-// }];
-
 
 function generateTableHead(table, data) {
     let thead = table.createTHead();
@@ -104,19 +56,3 @@ function generateTableScreen() {
             generateTable(table, res);
         })
 }
-
-
-
-// .then(() => console.log(relatorios))
-// .then(res => { debugger });
-
-// let table = document.querySelector("table");
-// let data = Object.keys({
-//     Data: "1",
-//     Operador: "1",
-//     NroDoc: "1",
-//     Descricao: "1",
-//     Valor: "1"
-// });
-// generateTableHead(table, data);
-// generateTable(table, relatorios);
