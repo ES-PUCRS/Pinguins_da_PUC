@@ -57,7 +57,51 @@ let contaAtual;
             data_de_criacao: new Date(),
             operador: !!operadores[i] ? operadores[i].name : operadorAtivo(),
             saldo: 0,
-            movimentacoes: []
+            movimentacoes: [
+                {
+                    data: "Sat May 30 2020 21:54:19 GMT-0300 (Horário Padrão de Brasília)",
+                    operador: "Lucas Nardon",
+                    doc: "123",
+                    descricao: "Manutenção de computadores",
+                    valor: "-8.123,00"
+                },{
+                    data: "Sat May 30 2020 11:54:19 GMT-0300 (Horário Padrão de Brasília)",
+                    operador: "Vinicius Bazanella",
+                    doc: "45910",
+                    descricao: "Compra de Monitores",
+                    valor: "-13.200,40"
+                },{
+                    data: "Sat May 30 2020 23:54:19 GMT-0300 (Horário Padrão de Brasília)",
+                    operador: "Vinicius Bazanella",
+                    doc: "256",
+                    descricao: "Fatura 18/2013",
+                    valor: "7.430,40"
+                },{
+                    data: "Sat May 30 2020 22:14:19 GMT-0300 (Horário Padrão de Brasília)",
+                    operador: "Lucas Nardon",
+                    doc: "65196",
+                    descricao: "Compra de computador",
+                    valor: "-4.500,00"
+                },{
+                    data: "Sat May 30 2020 17:04:19 GMT-0300 (Horário Padrão de Brasília)",
+                    operador: "Vinicius Bazanella",
+                    doc: "15",
+                    descricao: "Compra de impressora 3d",
+                    valor: "-2.499,00"
+                },{
+                    data: "Sat May 30 2020 22:25:19 GMT-0300 (Horário Padrão de Brasília)",
+                    operador: "Lucas Nardon",
+                    doc: "856",
+                    descricao: "Compra  impressoras empresa",
+                    valor: "-8.699,99"
+                },{
+                    data: "Sat May 30 2020 13:41:49 GMT-0300 (Horário Padrão de Brasília)",
+                    operador: "Vinicius Bazanella",
+                    doc: "78954",
+                    descricao: "Venda Computadores antigos",
+                    valor: "5.920,50"
+                }
+            ]
         })
     }
  
@@ -318,4 +362,20 @@ function showAccountMovements(idConta, elementRef) {
         generateTableHead(table, headers)
         generateTable(table, mov)
     }
+}
+
+function showMovements(elementRef) {
+    const movimentos = JSON.parse(localStorage.getItem('contas')).map(e => e.movimentacoes)
+
+    let mov = [];
+    movimentos.forEach((movimento) => {
+        movimento.forEach((m) => mov.push(m))
+    })
+
+    const table = document.getElementById(elementRef)
+    table.innerHTML = ''
+    const headers = ['DATA', 'OPERADOR', 'Nº DOC', 'DESCRICAO', 'VALOR']
+    
+    generateTableHead(table, headers)
+    generateTable(table, mov)
 }
