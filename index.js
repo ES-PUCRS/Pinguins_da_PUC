@@ -241,6 +241,7 @@ function movimento() {
     const movimento = {
         data: new Date().toLocaleDateString(),
         operador: operadorAtivo(),
+        doc: doc,
         descricao: descricao,
         valor: value
     }
@@ -259,6 +260,8 @@ function movimento() {
         })
 
     localStorage.setItem('contas', JSON.stringify(accounts))
+
+    showAccountMovements(id, 'conta-movimentos')
 }
 
 function transferencia() {
@@ -269,14 +272,50 @@ function transferencia() {
 
     const accounts = JSON.parse(localStorage.getItem('contas'))
 
+    const movFrom = {
+        data: new Date().toLocaleDateString(),
+        operador: operadorAtivo(),
+        doc: '-',
+        descricao: 'Transferência',
+        valor: value * -1
+    }
+
+    const movTo = {
+        data: new Date().toLocaleDateString(),
+        operador: operadorAtivo(),
+        doc: '-',
+        descricao: 'Entrada',
+        valor: value
+    }
+
     if (accounts[from].saldo >= value) {
         accounts[from].saldo -= value
         accounts[to].saldo += value
 
-        alert("Saldo insuficiente para realizar a operação")
-    } else {
+        accounts[from].movimentacoes.push(movFrom)
+        accounts[to].movimentacoes.push(movTo)
+
         localStorage.setItem('contas', JSON.stringify(accounts))
 
-        alert('Valor transferido.')
+        const id = document.getElementById('conta-origem').value
+        showAccountMovements(id, 'conta-movimentos')
+
+        alert("Transferência realizada com sucesso.")
+    } else {
+        alert("Saldo insuficiente para realizar a operação")
+    }
+}
+
+function showAccountMovements(idConta, elementRef) {
+    const contas = JSON.parse((localStorage.getItem('contas'))).filter(e => e.id == idConta)
+    if (contas.length) {
+        const mov = contas[0].movimentacoes
+     
+        const table = document.getElementById(elementRef)
+        table.innerHTML = ''
+    
+        const headers = ['DATA', 'OPERADOR', 'Nº DOC', 'DESCRIÇAO', 'VALOR']
+        generateTableHead(table, headers)
+        generateTable(table, mov)
     }
 }

@@ -5,7 +5,7 @@
       <div class="row" style="justify-content: space-between; margin-bottom: 12px;">
           <div class="form-field">
               <div>ID da Conta</div>
-              <select id="conta-origem" style="width: 100%;"></select>
+              <select id="conta-origem" style="width: 100%;" onchange="showAccountMovements(event.target.value, 'conta-movimentos')"></select>
           </div>
       </div>
       <button class="button send" id="operador" onclick="selecionaConta()"> Selecionar Conta </button>
@@ -61,7 +61,7 @@
 <hr style="margin-top: 24px;">
 
 <div class="container" style="justify-content: start; flex-direction: column;" >
-        <table style="border-collapse: collapse" id="todos-movimentos">
+        <table style="border-collapse: collapse" id="conta-movimentos">
             <thead>
               <tr>
                 <th style="border: 1px solid black">Data</th>
@@ -77,6 +77,7 @@
 </div>
 
 <script>
+  showAccountMovements(document.getElementById('conta-origem').value, 'conta-movimentos')
   populateOperators()
 
   accountSelect('conta-origem')
