@@ -209,7 +209,7 @@ function generateTable(table, data) {
 }
 
 function populateAccounts() {
-    const contas = JSON.parse(localStorage.getItem('contas'))
+    const contas = JSON.parse(localStorage.getItem('contas')).map(e => Object.assign(e, {movimentacoes: e.movimentacoes.length}))
 
     let table = document.getElementById('table-contas');
     table.innerHTML = ''
