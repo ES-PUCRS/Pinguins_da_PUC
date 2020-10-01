@@ -52,7 +52,7 @@ function generateTableScreen() {
                 Descricao: "1",
                 Valor: "1"
             });
-            generateTableHead(table, data);
+            // generateTableHead(table, data);
             generateTable(table, res);
         })
 }
