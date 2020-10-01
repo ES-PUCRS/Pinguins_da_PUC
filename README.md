@@ -1,12 +1,10 @@
 # Pinguins da PUC
 Repositório do Tabalho 1 GCS 2020/1
 
-## Componentes do time:
-- Alessandro Souza
+## Participantes do time:
 - Cleyson Oliveira
 - Diego Klein
 - Gustavo Oliveira
-- Hiago Luzardo
 - Lucas Cardoso
 - Lucas Nardon
 - Pedro Rogoski
